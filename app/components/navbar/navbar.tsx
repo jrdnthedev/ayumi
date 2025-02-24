@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 export function NavBar() {
@@ -10,7 +11,7 @@ export function NavBar() {
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
                     </a>
                     <div className="flex items-center space-x-6 rtl:space-x-reverse">
-                        <span className="text-sm  text-gray-500 dark:text-white hover:underline">Jon Jones</span>
+                        <span className="text-sm  text-gray-500 dark:text-white">Jon Jones</span>
                         <a href="#" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a>
                     </div>
                 </div>
