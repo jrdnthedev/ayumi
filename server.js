@@ -20,8 +20,12 @@ app.prepare().then(() => {
      broadcastMessage(message);
    });
    socket.on("joinRoom", (room) => {
+    console.log("user joined room: " + room);
      socket.join(room);
-     console.log("user joined room: " + room);
+   });
+   socket.on("leaveRoom", (room) => {
+    console.log("user left room: " + room);
+     socket.leave(room);
    });
    socket.on("disconnect", () => {
      console.log("user disconnected");

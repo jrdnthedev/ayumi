@@ -4,22 +4,27 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Room() {
-    const { messagesByRoom, sendMessage, joinRoom } = useSocket() || {};
-    const { roomId } = useParams();
+    const { messagesByRoom, sendMessage, joinRoom, leaveRoom } = useSocket() || {};
+    const { roomId } = useParams() as { roomId: string };
     const [message, setMessage] = useState("");
 
     useEffect(() => {
+        console.log("Joining room:", roomId);
         if (roomId && joinRoom) {
-            joinRoom(roomId[0]);
+            joinRoom(roomId);
         }
-    }, [roomId, joinRoom]);
+        return () => {
+            if (roomId && leaveRoom) {
+                leaveRoom(roomId);
+            }
+        }
+    }, [roomId, joinRoom, leaveRoom]);
 
     const onSendMessage = () => {
         if (sendMessage && roomId && message.trim()) {
-            sendMessage(roomId[0], message);
+            sendMessage(roomId, message);
             setMessage("");
         }
-        console.log(message);
     };
     return (
         <>
