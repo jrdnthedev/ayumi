@@ -9,7 +9,6 @@ export default function Room() {
     const [message, setMessage] = useState("");
 
     useEffect(() => {
-        console.log("Joining room:", roomId);
         if (roomId && joinRoom) {
             joinRoom(roomId);
         }
@@ -21,8 +20,9 @@ export default function Room() {
     }, [roomId, joinRoom, leaveRoom]);
 
     const onSendMessage = () => {
-        if (sendMessage && roomId && message.trim()) {
+        if (sendMessage && roomId && message.trim().length) {
             sendMessage(roomId, message);
+            console.log(message);
             setMessage("");
         }
     };
@@ -30,7 +30,7 @@ export default function Room() {
         <>
             <h1>Room: {roomId}</h1>
             <div className=" w-full max-w-md justify-center">
-                {(messagesByRoom?.[roomId![0]] || []).map((msg, i) => (
+                {(messagesByRoom?.[roomId!] || []).map((msg, i) => (
                     <div className="w-full flex items-start gap-2.5 mb-8" key={i}>
                         <div >
                             <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -70,7 +70,6 @@ export default function Room() {
                             </ul>
                         </div>
                     </div>
-
                 ))}
             </div>
             <div className="w-full max-w-md">

@@ -1,12 +1,10 @@
 "use client";
 
-import { useSocket } from "@/app/components/socket-provider/socketProvider";
 import Link from "next/link";
 
 export default function ChatRoom() {
-    const socket = useSocket();
     const rooms = ["General", "Sports", "Tech"];
-    console.log(socket);
+
     return (
         <>
             <div className="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700">

@@ -20,14 +20,6 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const newSocket = io("http://localhost:3000");
         setSocket(newSocket);
-
-        newSocket.on("message", (roomId: string, msg: string) => {
-            setMessagesByRoom(prev => ({
-                ...prev,
-                [roomId]: [...(prev[roomId] || []), msg],
-            }));
-        });
-
         return () => {
             newSocket.disconnect();
         };
