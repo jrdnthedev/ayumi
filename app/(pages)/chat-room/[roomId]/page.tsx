@@ -22,7 +22,6 @@ export default function Room() {
     const onSendMessage = () => {
         if (sendMessage && roomId && message.trim().length) {
             sendMessage(roomId, message);
-            console.log(message);
             setMessage("");
         }
     };
