@@ -51,9 +51,9 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
     };
 
     return (
-        <SocketContext.Provider value={{ socket, messagesByRoom, sendMessage, joinRoom, leaveRoom }}>
+        <SocketContext value={{ socket, messagesByRoom, sendMessage, joinRoom, leaveRoom }}>
             {children}
-        </SocketContext.Provider>
+        </SocketContext>
     );
 }
 
