@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export function NavBar() {
+export default function NavBar() {
     return (
         <>
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
