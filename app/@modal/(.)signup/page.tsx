@@ -1,7 +1,10 @@
-import Signup from "@/app/components/auth/signup/signup";
+import Signup from "@/app/components/auth/signup-form/signup";
+import Modal from "@/app/components/modal/modal";
 
 export default function Page() {
     return (
-        <Signup />
+        <Modal modalId="signup-modal">
+            <Signup />
+        </Modal>
     )
 }
