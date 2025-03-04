@@ -12,7 +12,8 @@ export default function NavBar() {
                     </a>
                     <div className="flex items-center space-x-6 rtl:space-x-reverse">
                         <span className="text-sm  text-gray-500 dark:text-white">Jon Jones</span>
-                        <a href="#" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a>
+                        {/* <a href="#" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a> */}
+                        <Link href="/login" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</Link>
                     </div>
                 </div>
             </nav>
