@@ -1,6 +1,5 @@
 import Modal from "@/app/components/modal/modal";
-import { render } from "@testing-library/react";
-import { screen } from "@testing-library/dom";
+import { render, screen } from "@testing-library/react";
 
 describe('Modal Component', () => {
 
