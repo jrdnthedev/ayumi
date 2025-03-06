@@ -1,6 +1,9 @@
 "use client";
-
-export default function Modal({ modalId, children }: { modalId: string, children: React.ReactNode }) {
+interface ModalProps {
+    modalId: string;
+    children: React.ReactNode;
+}
+export default function Modal({ modalId, children }: ModalProps) {
     return (
         <div id={modalId} tabIndex={-1} className="overflow-y-auto overflow-x-hidden flex absolute h-screen z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div className="relative p-4 w-full max-w-md max-h-full">

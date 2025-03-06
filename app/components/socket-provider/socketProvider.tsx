@@ -10,9 +10,13 @@ interface SocketContextType {
     leaveRoom: (roomId: string) => void;
 }
 
+interface SocketProviderProps {
+    children: React.ReactNode;
+}
+
 const SocketContext = createContext<SocketContextType | null>(null);
 
-export function SocketProvider({ children }: { children: React.ReactNode }) {
+export function SocketProvider({ children }: SocketProviderProps) {
     const [socket, setSocket] = useState<Socket | null>(null);
     const [messagesByRoom, setMessagesByRoom] = useState<{ [roomId: string]: string[] }>({});
     const [currentRoom, setCurrentRoom] = useState<string | null>(null);
