@@ -15,5 +15,4 @@ describe('Navbar Component', () => {
         expect(screen.getByText(/Login/i)).toBeInTheDocument();
     });
 
-
 })
