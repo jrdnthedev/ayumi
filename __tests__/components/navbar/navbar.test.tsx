@@ -10,8 +10,10 @@ describe('Navbar Component', () => {
 
     it('should render the navbar component', () => {
         render(<Navbar />);
-        const navbar = screen.getByText(/Home/i);
-        expect(navbar).toBeInTheDocument();
+        expect(screen.getByText(/Home/i)).toBeInTheDocument();
+        expect(screen.getByText(/Chat Room/i)).toBeInTheDocument();
+        expect(screen.getByText(/Login/i)).toBeInTheDocument();
     });
+
 
 })
