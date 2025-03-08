@@ -3,7 +3,7 @@
 import { RegisterForm } from "@/app/types/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 
 export default function Login() {
     const router = useRouter();

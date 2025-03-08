@@ -18,8 +18,8 @@ describe('Login Form Component', () => {
     it('should render the login form component with validation errors', async () => {
         render(<Login />);
 
-        const emailInput = screen.getByPlaceholderText('name@company.com');
-        const passwordInput = screen.getByPlaceholderText('••••••••');
+        const emailInput = screen.getByLabelText('Your email');
+        const passwordInput = screen.getByLabelText('Your password');
         const form = screen.getByRole('form');
 
         // Ensure email field is empty
