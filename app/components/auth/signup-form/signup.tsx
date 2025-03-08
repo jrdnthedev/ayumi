@@ -36,7 +36,7 @@ export default function Signup() {
                 </button>
             </div>
             <div className="p-4 md:p-5">
-                <form className="space-y-4" onSubmit={handleSubmit((data) => console.log(data))} role="form">
+                <form className="space-y-4" onSubmit={handleSubmit((data) => handlePostData(data))} role="form">
                     <div>
                         <label htmlFor="firstname" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Firstname</label>
                         <input type="text" {...register("firstName", { required: 'firstName is required to register', pattern: { value: namePattern, message: 'invalid firstName pattern' } })} id="firstname" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="james" />
