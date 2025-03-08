@@ -6,9 +6,9 @@ describe('Navbar Component', () => {
 
     it('should render the navbar component', () => {
         render(<Navbar />);
-        expect(screen.getByText(/Home/i)).toBeInTheDocument();
-        expect(screen.getByText(/Chat Room/i)).toBeInTheDocument();
-        expect(screen.getByText(/Login/i)).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'Chat Room' })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'Login' })).toBeInTheDocument();
     });
 
     it('should render the modal component when the login button is clicked', async () => {
