@@ -6,6 +6,7 @@ export default function Signup() {
 
     const handleClose = () => {
         router.back();
+        // window.history.go(-2);
     }
     return (
         <>
